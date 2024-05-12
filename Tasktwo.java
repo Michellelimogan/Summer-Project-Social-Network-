@@ -59,3 +59,8 @@ public class Tasktwo {
         return topUser;
     }
 }
+
+// person: each individual followers of user
+// totalUserFollowing: list of all the following of the user
+// topUser:to store the name of the person with the highest followers
+// maxFollowers:to store the maximum number of followers encountered
