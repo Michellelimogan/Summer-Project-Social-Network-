@@ -3,7 +3,7 @@ import java.io.*;
 
 public class TaskFive {
     // Method to find the highest followers
-    public String highestFollowers(String file) throws IOException {
+    public String findMedian(String file) throws IOException {
         Map<String, List<String>> userData = readUserData(file);
         return median(userData);
     }
@@ -30,5 +30,29 @@ public class TaskFive {
         }
         readUserData.close();
         return userData;
+    }
+    private String median(Map<String, List<String>> userData) {
+        // Map to store the count of followers for each user
+        Map<String, Integer> followerCounts = new HashMap<>();
+        
+        // Update the followerCount with new count of followers
+        for (List<String> totalUserFollowing : userData.values()) {
+            for (String user : totalUserFollowing) {
+                followerCounts.put(user, followerCounts.getOrDefault(user, 0) + 1);
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>(followerCounts.values());
+        Collections.sort(list);
+        int n = list.size();
+        boolean isEven = (n % 2 == 0);
+        if (isEven) {
+            int mid1 = list.get(n / 2 - 1);
+            int mid2 = list.get(n / 2);
+            // If the number of elements is even, average the two middle values
+            return String.valueOf((mid1 + mid2) / 2);
+        } else {
+            // If the number of elements is odd, return the middle value
+            return String.valueOf(list.get(n / 2));
+        }
     }
 }
