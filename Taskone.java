@@ -4,31 +4,34 @@ import java.io.IOException;// // For try catch
 
 public class Taskone {
 
+    // Method to count the density 
     public static double countDensity(String file) throws IOException {
-        int persons = 0;
-        int followers = 0;
+        int persons = 0; // Variable to store the number of persons
+        int followers = 0; //  Variable to store the number of followers
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
-
+            // Read each line from the file
             while ((line = reader.readLine()) != null) {
-            // To read each line from file 
                 persons++; 
                 String[] name = line.split(" "); 
-                // Spliting the line using whitespace to get people's name
+                // Split the line using whitespace to get people's name
                 followers += name.length - 1; 
-                // Number of followers for each user
+                // Count the number of followers for each user
             }
         }
+        // Calculate the total number of edges 
         int edges = persons * (persons - 1);
 
+        //To handle case if there is no edges
         if (edges == 0) {
             return 0;
         }
 
+        //Calculate the density
         double density = (double) followers/ edges;
-        // Count density
 
+        // Format the density to have 8 decimal place
         density = Double.parseDouble(String.format("%.8f", density));
 
         return density;
