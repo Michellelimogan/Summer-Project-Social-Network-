@@ -3,7 +3,7 @@ import java.io.IOException; // For try catch
 public class Main {
 
     public static void main(String[] args) {
-        String file = "social-network1.txt";
+        String file = args[0];
         // To access input file
         try {
             //Running task one 
@@ -19,6 +19,11 @@ public class Main {
             TaskFive taskFive = new TaskFive();
             String mid = taskFive.findMedian(file);
             System.out.println("The median value for the number of followers in the network is " + mid);
+
+            //Running task six
+            Tasksix taskSix = new Tasksix();
+            String advertize = taskSix.bestAdvertiser(file);
+            System.out.println("The optimal person to enroll for spreading information about a new product in the Dapper social network is " + advertize);
 
 
         } catch (IOException e) {
