@@ -39,4 +39,58 @@ public class Tasksix {
         return userData;
     }
 
+    //Method to find user with the highest reach count
+    private String findAdvertiser(Map<String, List<String>> userData) {
+        // Map to store reach count for each user
+        Map<String, Integer> userReachCountMap = new HashMap<>();
+        
+        // Calculate reach count for every user
+        for (String person : userData.keySet()) {
+            // To store followers reached by user
+            Set<String> totalReachCount = new HashSet<>();
+            calculateReachCount(person, userData, totalReachCount);
+            // Store reach count in the map
+            userReachCountMap.put(person, totalReachCount.size());
+        }
+
+        // Sortes usernames alphabetically
+        List<String> userSorted = new ArrayList<>(userData.keySet());
+        Collections.sort(userSorted);
+
+        
+        String bestAdvertiser = userSorted.get(0); 
+        int maxUserCounts = userReachCountMap.get(bestAdvertiser);
+
+        for (int i = 1; i < userSorted.size(); i++) {
+            String person = userSorted.get(i);
+            int personReachCount = userReachCountMap.get(person);
+
+            // Update best advertiser if current user has higher reach count
+            if (personReachCount > maxUserCounts || (personReachCount == maxUserCounts && person.compareTo(bestAdvertiser) < 0)) {
+                bestAdvertiser = person;
+                maxUserCounts = personReachCount;
+            }
+        }
+
+        return bestAdvertiser;
+    }
+
+    private void calculateReachCount(String person, Map<String, List<String>> totalFollowers,
+            Set<String> visitedPersons) {
+        // If person has already been reached, return
+        if (visitedPersons.contains(person)) {
+            return; 
+        }
+        // Add the current person to mark that they have been visited        
+        visitedPersons.add(person); 
+        // Get followers of the person
+        List<String> userFollowers = totalFollowers.getOrDefault(person, Collections.emptyList());
+        // Loop to calculate the numbers of followers
+        for (String username : userFollowers) {
+            calculateReachCount(username, totalFollowers, visitedPersons);                                                                     
+        }
+    }
+    // person: the current person in the network
+    // totalFollowers: user data extracted from the file
+    // visitedPerson: set of people reached so far in the network traversal
 }
