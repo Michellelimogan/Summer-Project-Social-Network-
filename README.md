@@ -8,7 +8,7 @@ The output will then provide density, the highest and median follower count, and
 
 This code has a total of 5 files:
 
-1. Main Class:
+1. Analysis Class:
 
 To call the method of each task to print the output of the task.
 
