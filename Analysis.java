@@ -25,7 +25,7 @@ public class Analysis {
             String advertize = taskSix.bestAdvertiser(file);
             System.out.println("The best person to enroll for spreading information on the Dapper social network is " + advertize);
 
-
+        
         } catch (IOException e) {
             System.out.println("File could not be read: " + e.getMessage());
         }
