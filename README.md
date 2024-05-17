@@ -12,6 +12,12 @@ This code has a total of 5 files:
 
 To call the method of each task to print the output of the task.
 
+2. Task One (Count Density):
+
+This file calculates the density of the graph represented by the social network.
+The algorithm first reads the file, gathers the data, and then counts the density by dividing all of the edges and followers.
+
+
 
 
 
