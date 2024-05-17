@@ -32,6 +32,16 @@ The algorithm first reads the file, gathers the data, finds the followers of eac
 This file finds the best person to enroll for spreading information on the Dapper social network. 
 The algorithm first reads the file, gathers the data, and finds the user with the highest reach count, sortes usernames alphabetically, goes through each user and its followers to find who is the best advertiser and make sure that each user has only been visited once through marking them if they have been visited. 
 
+How to run:
+
+1. Open terminal
+2. To run the program type:
+
+java Analysis \<inputFile\>
+
+example:
+
+java Analysis social-network1.txt
 
 
 
