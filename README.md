@@ -20,7 +20,12 @@ The algorithm first reads the file, gathers the data, and then counts the densit
 3. Task Two (Highest Followers):
 
 This file finds the person who has the highest number of followers.
-The algorithm first reads the file, gathers the data, finds the user with the highest number of followers, and making sure that the current user has the most followers. 
+The algorithm first reads the file, gathers the data, finds the user with the highest number of followers, and makes sure that the current user has the most followers. 
+
+4. Task Five (Find Median):
+
+This file finds the median value for the number of followers in the network.
+The algorithm first reads the file, gathers the data, finds the followers of each user, counts the median using the followers count through boolean. 
 
 
 
