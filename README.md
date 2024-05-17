@@ -37,7 +37,7 @@ How to run:
 1. Open terminal
 2. To run the program type:
    
-javac Analysis 
+javac Analysis.java
 
 java Analysis \<inputFile\>
 
