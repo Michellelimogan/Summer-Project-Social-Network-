@@ -25,8 +25,12 @@ The algorithm first reads the file, gathers the data, finds the user with the hi
 4. Task Five (Find Median):
 
 This file finds the median value for the number of followers in the network.
-The algorithm first reads the file, gathers the data, finds the followers of each user, counts the median using the followers count through boolean. 
+The algorithm first reads the file, gathers the data, finds the followers of each user, sorts the number ascending, and counts the median using the followers count through boolean. 
 
+5. Task Six (Best Advertiser):
+
+This file finds the best person to enroll for spreading information on the Dapper social network. 
+The algorithm first reads the file, gathers the data, and finds the user with the highest reach count, sortes usernames alphabetically, goes through each user and its followers to find who is the best advertiser and make sure that each user has only been visited once through marking them if they have been visited. 
 
 
 
