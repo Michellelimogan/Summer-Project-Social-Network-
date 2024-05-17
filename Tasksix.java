@@ -77,15 +77,16 @@ public class Tasksix {
 
     private void calculateReachCount(String person, Map<String, List<String>> totalFollowers,
             Set<String> visitedPersons) {
-        // If person has already been reached, return
+        // Checking if the current person has already been visited or not 
         if (visitedPersons.contains(person)) {
+            //If the current person has already been visited, return
             return; 
         }
-        // Add the current person to mark that they have been visited        
+        // If the user has been visited, add the current user to mark them       
         visitedPersons.add(person); 
-        // Get followers of the person
+        // Get the followers from the current user from the Map (totalFollowers)
         List<String> userFollowers = totalFollowers.getOrDefault(person, Collections.emptyList());
-        // Loop to calculate the numbers of followers
+        // Go through the current user's followers to examine their entire data
         for (String username : userFollowers) {
             calculateReachCount(username, totalFollowers, visitedPersons);                                                                     
         }
